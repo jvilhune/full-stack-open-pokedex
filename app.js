@@ -6,7 +6,7 @@ require('dotenv').config()
 // eslint-disable-next-line
 const PORT = 8080 || process.env.PORT
 
-app.use(express.static('dist'))
+app.use('/', express.static('dist'))
 
 app.listen(PORT, () => {
   // eslint-disable-next-line
