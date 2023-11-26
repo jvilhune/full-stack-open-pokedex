@@ -4,7 +4,7 @@ require('dotenv').config()
 
 // Heroku dynamically sets a port
 // eslint-disable-next-line
-const PORT = 8081 || process.env.PORT
+const PORT = 8080 || process.env.PORT
 
 app.use('/', express.static('dist'))
 
