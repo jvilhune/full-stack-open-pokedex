@@ -6,6 +6,15 @@ require('dotenv').config()
 // eslint-disable-next-line
 const PORT = 8080 || process.env.PORT
 
+app.get('/health', (req, res) => {
+  res.send('ok')
+})
+
+app.get('/version', (req, res) => {
+  res.send('2') // change this string to ensure a new version deployed
+})
+
+
 app.use('/', express.static('dist'))
 
 app.listen(PORT, () => {
