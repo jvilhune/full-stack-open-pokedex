@@ -2,7 +2,7 @@ const express = require('express')
 const app = express()
 require('dotenv').config()
 
-// Heroku dynamically sets a port
+// Herokuu dynamically sets a port
 // eslint-disable-next-line
 const PORT = 8080 || process.env.PORT
 
