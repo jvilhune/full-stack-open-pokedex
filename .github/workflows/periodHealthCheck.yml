@@ -6,12 +6,12 @@ on:
 
 jobs:
   periodic_health_check:
-    if: false
+    if: true
     runs-on: ubuntu-18.04
     steps:
       - name: Check the deployed service URL
         uses: jtalk/url-health-check-action@0195e0d5f1cf2ebcfdbb05b6c070b61479ebb75a
         with:
           url: 'https://full-stack-open-pokedex-twed.onrender.com'
-          max-attempts: 5
-          retry-delay: 10s
+          max-attempts: 3
+          retry-delay: 5s
