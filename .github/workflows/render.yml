@@ -1,9 +1,5 @@
 name: Render
-on:
-  push:
-    branches:
-      - master
-      # note that your "main" branch might be called main instead of master
+on: [pull_request]
 jobs:
   deploy:
     name: Wait for Deploy
