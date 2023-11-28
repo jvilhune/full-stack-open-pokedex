@@ -1,0 +1,141 @@
+
+/*******************************************************
+
+MAKE SURE THE NECESSARY LIBRARIES ARE INSTALLED
+
+*******************************************************/
+
+npm install dotenv
+npm install --save-dev cypress
+npm install eslint-plugin-cypress --save-dev
+npm install eslint-plugin-cypress@latest --save-dev
+npm install jest-environment-jsdom --save-dev
+
+
+/*******************************************************
+
+LOCAL TESTING
+
+*******************************************************/
+
+to run the webpack dev server
+C:\Users\PC\full-stack-open-pokedex>npm start
+
+to run tests
+C:\Users\PC\full-stack-open-pokedex>npm test
+
+to run eslint
+C:\Users\PC\full-stack-open-pokedex>npm run eslint
+
+to run cypress tests in windows (both must be runing)
+C:\Users\PC\full-stack-open-pokedex>npm start
+C:\Users\PC\full-stack-open-pokedex>npm cypress:open
+...wait ... the cypress window is opening ...
+E2E Testing
+Start E2E Testing in Chrome
+Create new and run the next one by one
+C:\Users\PC\full-stack-open-pokedex/cypress/e2e/app.cy.js
+C:\Users\PC\full-stack-open-pokedex/pokedex.cy.js
+C:\Users\PC\full-stack-open-pokedex/sp.cy.js
+Okay run the spec
+
+to run all cypress tests in command line
+C:\Users\PC\full-stack-open-pokedex>npm run test:e2e
+
+to make a production build
+C:\Users\PC\full-stack-open-pokedex>npm run build
+
+to run your production build
+C:\Users\PC\full-stack-open-pokedex>npm run start-prod
+
+test with the browser
+C:\Users\PC\full-stack-open-pokedex>npm start
+http://localhost:8080/
+
+
+/********************************************************
+
+IF NEXT ERROR OCCURS AFTER npm run build COMMAND RUNS
+
+*********************************************************/
+
+full-stack-open-pokedex Error: error:0308010C:digital envelope routines::unsup
+->
+C:\Users\PC\full-stack-open-pokedex>set NODE_OPTIONS=--openssl-legacy-provider
+C:\Users\PC\full-stack-open-pokedex>npm run build
+
+
+/********************************************************
+
+PUT THE APPLICATION TO GITHUB
+
+*********************************************************/
+...
+C:\Users\PC\full-stack-open-pokedex>npm run build
+C:\Users\PC\full-stack-open-pokedex>git add .
+C:\Users\PC\full-stack-open-pokedex>git commit -m"version 1-0"
+C:\Users\PC\full-stack-open-pokedex>git push
+
+REMEMBER TO CREATE RENDER_API_KEY :
+
+https://github.com/jvilhune/full-stack-open-pokedex
+Settings - Secrets and Variables - Actions - Repository secrets
+Name - RENDER_API_KEY -> Create
+Name - RENDER_SERVICE_ID -> for example : srv-clhfabcdefg9s73b0vs7g
+(take RENDER_SERVICE_ID from Render Settings - Deploy Hook - address
+it is srv parts on it, for example srv-clhfabcdefg9s73b0vs7g)
+
+
+/********************************************************
+
+GITHUB ACTIONS TEST
+
+*********************************************************/
+Select - Actions to see the results of tests
+
+These are the files tested in github actions :
+C:\full-stack-open-pokedex\.github\workflows\periodHealthCheck.yml
+C:\full-stack-open-pokedex\.github\workflows\health.yml
+C:\full-stack-open-pokedex\.github\workflows\hello.yml
+C:\full-stack-open-pokedex\.github\workflows\pipeline.yml
+C:\full-stack-open-pokedex\.github\workflows\render.yml
+
+Periodic health check - runs automatically every hour (one time in hour)
+health check - runs automatically every hour (one time in hour)
+Hello World! -  runs automatically always after git push command
+Deployment pipeline - runs automatically always after git push command
+
+Render - Starts running automatically always after git push or git pull command
+(after git push command immediately go to render page and do manual deployment) 
+https://dashboard.render.com
+Dashboard
+full-stack-open-pokedex
+Manual Deploy - Deploy Latest Commit
+
+/********************************************************
+
+PUT (DEPLOY) THE APPLICATION TO RENDER HOSTING SERVICE
+
+*********************************************************/
+
+https://dashboard.render.com/
+New - Web Service
+Next
+Public Git repository - https://github.com/jvilhune/full-stack-open-pokedex
+Continue
+Settings
+Name - full-stack-open-pokedex
+Region - Frankfurt (EU Central)
+Repository - https://github.com/jvilhune/full-stack-open-pokedex
+Branch - master
+Build Command - npm install
+Start Command - npm run start-prod
+Auto-Deploy - No
+Deploy Hook - Your private URL to trigger a deploy for this server. Remember to keep this a secret
+Environment
+Key - PORT
+Value - 8080
+Manual Deploy - Deploy Latest Commit
+->
+Get web address for your application :
+https://full-stack-open-pokedex-twed.onrender.com
