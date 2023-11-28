@@ -11,6 +11,42 @@ npm install eslint-plugin-cypress --save-dev
 npm install eslint-plugin-cypress@latest --save-dev
 npm install jest-environment-jsdom --save-dev
 
+/*******************************************************
+
+MAKE SURE THE SETTINGS IN THE
+C:\Users\PC\full-stack-open-pokedex/.eslint.js file
+
+*******************************************************/
+
+FILE .eslintrc.js :
+  "env": {
+    ...
+    "jest/globals": true,
+    "cypress/globals": true
+  },
+
+  "plugins": [
+    "react", "jest", "cypress"
+  ],
+
+
+/*******************************************************
+
+MAKE SURE THE SETTINGS IN THE
+C:\Users\PC\full-stack-open-pokedex/package.json file
+
+*******************************************************/
+
+  "scripts": {
+    "start": "webpack-dev-server --open --mode development",
+    "start-prod": "node app.js",
+    "test": "jest",
+    "eslint": "eslint .",
+    "build": "webpack --mode production",
+    "cypress:open": "cypress open",
+    "test:e2e": "cypress run"
+  },
+
 
 /*******************************************************
 
@@ -74,7 +110,16 @@ C:\Users\PC\full-stack-open-pokedex>npm run build
 PUT THE APPLICATION TO GITHUB
 
 *********************************************************/
+
+Check the file C:\Users\PC\full-stack-open-pokedex/.gitignore
+Remove setting dist/ in the file
+(because the production version, directory dist must be put to github too)
+
+Make sure you have compiled the project
+C:\Users\PC\full-stack-open-pokedex>npm run build
+
 ...
+
 C:\Users\PC\full-stack-open-pokedex>npm run build
 C:\Users\PC\full-stack-open-pokedex>git add .
 C:\Users\PC\full-stack-open-pokedex>git commit -m"version 1-0"
@@ -124,7 +169,6 @@ Manual Deploy - Deploy Latest Commit
 PUT (DEPLOY) THE APPLICATION TO RENDER HOSTING SERVICE
 
 *********************************************************/
-
 https://dashboard.render.com/
 New - Web Service
 Next
@@ -146,3 +190,16 @@ Manual Deploy - Deploy Latest Commit
 ->
 Get web address for your application :
 https://full-stack-open-pokedex-twed.onrender.com
+
+test production version with the browser
+https://full-stack-open-pokedex-twed.onrender.com
+
+test also the with the next address
+https://full-stack-open-pokedex-twed.onrender.com/version
+->
+Browser should show number '2'
+
+test also the with the next address
+https://full-stack-open-pokedex-twed.onrender.com/health
+->
+Browser should show text 'ok'

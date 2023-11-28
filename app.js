@@ -10,8 +10,9 @@ app.get('/health', (req, res) => {
   res.send('<br><p>ok</p><br>')
 })
 
+// change this string to ensure a new version deployed
 app.get('/version', (req, res) => {
-  res.send('<br><p>2</p><br>') // change this string to ensure a new version deployed
+  res.send('<br><p>2</p><br>')
 })
 
 
