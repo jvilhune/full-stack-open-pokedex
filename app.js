@@ -7,11 +7,11 @@ require('dotenv').config()
 const PORT = 8080 || process.env.PORT
 
 app.get('/health', (req, res) => {
-  res.send('ok')
+  res.send('<p>ok</p>')
 })
 
 app.get('/version', (req, res) => {
-  res.send('2') // change this string to ensure a new version deployed
+  res.send('<p>2</p>') // change this string to ensure a new version deployed
 })
 
 

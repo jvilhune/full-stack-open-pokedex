@@ -84,6 +84,9 @@ Name - RENDER_API_KEY -> Create
 Name - RENDER_SERVICE_ID -> for example : srv-clhfabcdefg9s73b0vs7g
 (take RENDER_SERVICE_ID from Render Settings - Deploy Hook - address
 it is srv parts on it, for example srv-clhfabcdefg9s73b0vs7g)
+Renmember to put the same srv parts into the
+C:\full-stack-open-pokedex\.github\workflows\render.yml file
+( line : service-id: srv-clhfe1mbbf9s73b0vs7g)
 
 
 /********************************************************
