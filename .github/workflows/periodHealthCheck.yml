@@ -7,7 +7,7 @@ on:
 jobs:
   periodic_health_check:
     if: true
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     steps:
       - name: Check the deployed service URL
         uses: jtalk/url-health-check-action@0195e0d5f1cf2ebcfdbb05b6c070b61479ebb75a
