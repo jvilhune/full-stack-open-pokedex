@@ -48,7 +48,11 @@ C:\Users\PC\full-stack-open-pokedex>npm run build
 to run your production build
 C:\Users\PC\full-stack-open-pokedex>npm run start-prod
 
-test with the browser
+test development version locally with the browser
+C:\Users\PC\full-stack-open-pokedex>npm start
+http://localhost:8080/
+
+test production version locally with the browser
 C:\Users\PC\full-stack-open-pokedex>npm start
 http://localhost:8080/
 
