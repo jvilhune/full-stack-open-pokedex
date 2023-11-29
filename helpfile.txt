@@ -101,7 +101,7 @@ C:\Users\PC\full-stack-open-pokedex>npm start
 http://localhost:8080/
 
 test production version locally with the browser
-C:\Users\PC\full-stack-open-pokedex>npm start
+C:\Users\PC\full-stack-open-pokedex>npm run start-prod
 http://localhost:8080/
 
 
@@ -199,6 +199,7 @@ Environment
 Key - PORT
 Value - 8080
 Manual Deploy - Deploy Latest Commit
+(do 'Deploy Latest Commit' always when you have made changes to the code and compiled it)
 ->
 Get web address for your application :
 https://full-stack-open-pokedex-twed.onrender.com
@@ -206,12 +207,12 @@ https://full-stack-open-pokedex-twed.onrender.com
 test production version with the browser
 https://full-stack-open-pokedex-twed.onrender.com
 
-test also the with the next address
+test also with the next address
 https://full-stack-open-pokedex-twed.onrender.com/version
 ->
 Browser should show number '2'
 
-test also the with the next address
+test also with the next address
 https://full-stack-open-pokedex-twed.onrender.com/health
 ->
 Browser should show text 'ok'

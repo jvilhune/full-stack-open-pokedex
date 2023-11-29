@@ -15,4 +15,5 @@ Start by running `npm install` inside the project folder
 `npm run start-prod` to run your production build
 
 
-READ HELPFILE.TXT!!!!!!
+Detailed additional information about the application :
+Read helpfile.txt !!!!!!
