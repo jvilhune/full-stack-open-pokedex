@@ -50,6 +50,18 @@ C:\Users\PC\full-stack-open-pokedex/package.json file
 
 /*******************************************************
 
+FIX A BUG IN THE
+C:\Users\PC\full-stack-open-pokedex\src\PokemonPage.jsx
+FILE
+
+*******************************************************/
+{next && <Link to={`/pokemon/${previous.name}`}>Next</Link>}
+->
+{next && <Link to={`/pokemon/${next.name}`}>Next</Link>}
+
+
+/*******************************************************
+
 LOCAL TESTING
 
 *******************************************************/
