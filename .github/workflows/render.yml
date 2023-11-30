@@ -23,18 +23,18 @@ jobs:
           DEFAULT_BUMP: patch
           RELEASE_BRANCHES: master
       - name: Test Warn
-        uses: rjstone/discord-webhook-notify@v1
+        uses: rjstone/discord-webhook-notify@v3
         with:
           severity: warn
           details: Test warning.
-          webhookUrl: https://full-stack-open-pokedex-twed.onrender.com/
+          webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
       - name: Test Error
         if: ${{ failure() }}
-        uses: rjstone/discord-webhook-notify@v1
+        uses: rjstone/discord-webhook-notify@v3
         with:
           severity: error
           details: Test error.
-          webhookUrl: https://full-stack-open-pokedex-twed.onrender.com/
+          webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
 
 
 
