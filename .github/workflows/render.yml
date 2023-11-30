@@ -27,14 +27,14 @@ jobs:
         with:
           severity: warn
           details: Test warning.
-          webhookUrl: https://smee.io/xrjJsdwJoGL62c08
+          webhookUrl: 'https://smee.io/xrjJsdwJoGL62c08'
       - name: Test Error
         if: ${{ failure() }}
         uses: rjstone/discord-webhook-notify@v1
         with:
           severity: error
           details: Test error.
-          webhookUrl: https://smee.io/xrjJsdwJoGL62c08
+          webhookUrl: 'https://smee.io/xrjJsdwJoGL62c08'
 
 
 
