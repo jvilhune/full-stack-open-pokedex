@@ -22,19 +22,15 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           DEFAULT_BUMP: patch
           RELEASE_BRANCHES: master
-      - name: Test Warn
-        uses: rjstone/discord-webhook-notify@v1
-        with:
-          severity: warn
-          details: Test warning.
-          webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
-      - name: Test Error
-        if: ${{ failure() }}
-        uses: rjstone/discord-webhook-notify@v1
-        with:
-          severity: error
-          details: Test error.
-          webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
+      - name: error notification
+          if: ${{ failure() }}
+          uses: rjstone/discord-webhook-notify@v1
+          with:
+              username: Github
+              avatarUrl: https://github.githubassets.com/images/modules/logos_page/Octocat.png
+              details: 'commit https://github.com/jvilhune/full-stack-open-pokedex/commit/${{ github.sha }} broke the build :('
+              text: Build failed
+              webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
 
 
 
