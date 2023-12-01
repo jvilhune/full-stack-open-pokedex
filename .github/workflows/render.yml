@@ -17,7 +17,7 @@ jobs:
           sleep: 30000
       - name: discord webhook
         run: |
-          echo secrets.DISCORD_WEBHOOK
+          echo "secrets.DISCORD_WEBHOOK: %s"
       - name: Bump version and push tag
         if: ${{ github.event_name == 'push' && !contains(join(github.event.commits.*.message), '#skip')}}
         uses: anothrNick/github-tag-action@eca2b69f9e2c24be7decccd0f15fdb1ea5906598
