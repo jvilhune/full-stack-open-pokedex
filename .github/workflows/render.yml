@@ -22,13 +22,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           DEFAULT_BUMP: patch
           RELEASE_BRANCHES: master
-      - name: Test Error
-        if: ${{ failure() }}
-        uses: rjstone/discord-webhook-notify@v1
-        with:
-          severity: error
-          details: Test error.
-          webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
+
 
 
 
