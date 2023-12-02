@@ -28,6 +28,20 @@ jobs:
             command: npm run test:e2e
             start: npm run start-prod
             wait-on: http://localhost:8080
+      - name: Build Success
+        uses: rjstone/discord-webhook-notify@v1
+        if: success()
+        with:
+          severity: info
+          details: Build Successful
+          webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
+      - name: Build Failed
+        uses: rjstone/discord-webhook-notify@v1
+        if: failure()
+        with:
+          severity: error
+          details: Build Failed
+          webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
 
 
 
