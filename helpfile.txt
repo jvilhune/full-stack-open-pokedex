@@ -216,3 +216,27 @@ test also with the next address
 https://full-stack-open-pokedex-twed.onrender.com/health
 ->
 Browser should show text 'ok'
+
+
+/********************************************************
+
+Periodic health check setting
+
+*********************************************************/
+
+Check the periodic health check settings in the files
+github/periodHealthCheck.yml
+github/health.yml
+
+* * * * * * = Minute Hour Day Month Weekday Year
+- cron: '0 15 10 * * ? 2023' at 10:15 a.m. every day during the year 2023
+- cron: '0 0 12 1 *' every year,  on December 1st at 00:00
+- cron: '1 * * * *'  At once in an hour every day (at minute 1)
+- cron: '45 17 12 6 * *' every  year, on December 6th at 17:45
+
+I'll use smee.io to check and receive webhook payloads
+https://github.com/probot/smee.io
+(configuration can be made via https://github.com/ - Settings - Webhooks)
+
+
+
